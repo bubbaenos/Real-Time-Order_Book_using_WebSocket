@@ -1,0 +1,43 @@
+<div><table style="float:left;">
+  <thead>
+  <th>Type</th>
+  <th>Price</th>
+  <th>Amount</th>
+  <th>Count</th>
+  <th>Exchange</th>
+  <th>pairname</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let group of data[0]">
+    <td>{{group.type}}</td>
+    <td>{{group.price}}</td>
+    <td>{{group.amount}}</td>
+    <td>{{group.count}}</td>
+    <td>{{group.exchange}}</td>
+    <td>{{group.pairname}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div>
+  <table>
+    <thead>
+    <th>Type</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th>Count</th>
+    <th>Exchange</th>
+    <th>pairname</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let group of data[1]">
+      <td>{{group.type}}</td>
+      <td>{{group.price}}</td>
+      <td>{{group.amount}}</td>
+      <td>{{group.count}}</td>
+      <td>{{group.exchange}}</td>
+      <td>{{group.pairname}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,9 @@
+version: '2'
+services:
+    web:
+        build: .
+        ports:
+            - "6000:6000"
+        volumes:
+            - .:/web
+

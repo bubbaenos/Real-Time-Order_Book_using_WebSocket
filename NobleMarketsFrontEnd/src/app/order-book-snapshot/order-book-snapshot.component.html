@@ -1,0 +1,81 @@
+<div>
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>My Reactive Form</h1>
+
+        <label>Price
+          <input type="number" formControlName="price">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['price'].valid && rForm.controls['price'].touched">{{ titleAlert }}</div>
+        <br>
+        <label>Exchange</label>
+        <select id="exchange" formControlName="exchange">
+          <option *ngFor="let c of exchangeList" [ngValue]="c">{{ c }}</option>
+        </select>
+        <br>
+        <label>PairName</label>
+        <select id="pairname" formControlName="pairname">
+          <option *ngFor="let c of pairnameList" [ngValue]="c">{{ c }}</option>
+        </select>
+        <br>
+        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{ price }}</h1>
+
+      <p>{{ exchange }}</p>
+    </div>
+  </div>
+</ng-template>
+
+<div><table style="float:left;">
+  <thead>
+  <th>Type</th>
+  <th>Price</th>
+  <th>Amount</th>
+  <th>Count</th>
+  <th>Exchange</th>
+  <th>pairname</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let group of data[0]">
+    <td>{{group.type}}</td>
+    <td>{{group.price}}</td>
+    <td>{{group.amount}}</td>
+    <td>{{group.count}}</td>
+    <td>{{group.exchange}}</td>
+    <td>{{group.pairname}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div>
+  <table>
+    <thead>
+    <th>Type</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th>Count</th>
+    <th>Exchange</th>
+    <th>pairname</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let group of data[1]">
+      <td>{{group.type}}</td>
+      <td>{{group.price}}</td>
+      <td>{{group.amount}}</td>
+      <td>{{group.count}}</td>
+      <td>{{group.exchange}}</td>
+      <td>{{group.pairname}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
